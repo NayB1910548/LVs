@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 22, 2023 lúc 03:51 PM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Thời gian đã tạo: Th12 04, 2023 lúc 09:32 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `account` (
   `account_phone` varchar(20) NOT NULL,
   `account_type` int(11) NOT NULL,
   `account_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `account`
@@ -43,12 +43,13 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`account_id`, `account_name`, `account_password`, `account_email`, `account_phone`, `account_type`, `account_status`) VALUES
 (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin@gmail.com', '0987654322', 2, 0),
-(26, 'La Ngọc Nay', 'e10adc3949ba59abbe56e057f20f883e', 'ngocnay2001@gmail.com', '', 2, 0),
+(26, 'La Ngọc Nay', 'e10adc3949ba59abbe56e057f20f883e', 'ngocnay2001@gmail.com', '', 1, 0),
 (27, 'Lê Tài', 'e10adc3949ba59abbe56e057f20f883e', 'letai@gmail.com', '', 0, 0),
 (28, 'Trọng Hiển', 'e10adc3949ba59abbe56e057f20f883e', 'tronghien@gmail.com', '0398419004', 1, 0),
 (29, 'Lê Tâm', 'e10adc3949ba59abbe56e057f20f883e', 'letam@gmail.com', '', 0, 0),
 (30, 'La Ngọc Nay', 'e10adc3949ba59abbe56e057f20f883e', 'test@gmail.com', '', 0, 0),
-(31, 'hien', '25f9e794323b453885f5181f1b624d0b', 'tronghiengato@gmail.com', '', 1, 0);
+(31, 'hien', 'e10adc3949ba59abbe56e057f20f883e', 'tronghiengato@gmail.com', '', 1, 0),
+(32, 'La Ngọc Nay', 'e10adc3949ba59abbe56e057f20f883e', 'test2@gmail.com', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ CREATE TABLE `article` (
   `article_image` varchar(100) NOT NULL,
   `article_date` date NOT NULL,
   `article_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `article`
@@ -87,7 +88,7 @@ INSERT INTO `article` (`article_id`, `article_author`, `article_title`, `article
 CREATE TABLE `brand` (
   `brand_id` int(11) NOT NULL,
   `brand_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `brand`
@@ -109,7 +110,7 @@ INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
 CREATE TABLE `capacity` (
   `capacity_id` int(11) NOT NULL,
   `capacity_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `capacity`
@@ -138,7 +139,7 @@ CREATE TABLE `category` (
   `category_name` varchar(100) NOT NULL,
   `category_description` text NOT NULL,
   `category_image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `category`
@@ -164,7 +165,7 @@ CREATE TABLE `collection` (
   `collection_description` varchar(255) NOT NULL,
   `collection_order` int(11) NOT NULL,
   `collection_type` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `collection`
@@ -187,7 +188,7 @@ CREATE TABLE `comment` (
   `comment_content` text NOT NULL,
   `comment_date` date NOT NULL,
   `comment_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -203,7 +204,7 @@ CREATE TABLE `customer` (
   `customer_email` varchar(100) NOT NULL,
   `customer_phone` varchar(50) NOT NULL,
   `customer_address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `customer`
@@ -217,7 +218,8 @@ INSERT INTO `customer` (`customer_id`, `account_id`, `customer_name`, `customer_
 (26, 29, 'Lê Tâm', 2, 'letam@gmail.com', '0387581173', 'Cần Thơ'),
 (27, 30, 'La Ngọc Nay', 1, 'test@gmail.com', '0387581170', 'Cần Thơ'),
 (28, 0, 'La Ngọc Nay', 0, 'ngocnay2001@gmail.com', '0387581175', 'Cần Thơ'),
-(29, 31, 'hien', 1, 'tronghiengato@gmail.com', '0398419004', 'hậu giang');
+(29, 31, 'hien', 1, 'tronghiengato@gmail.com', '0398419004', 'hậu giang'),
+(30, 32, 'La Ngọc Nay', 1, 'test2@gmail.com', '0387581176', 'Cần Thơ');
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ CREATE TABLE `delivery` (
   `delivery_phone` varchar(20) NOT NULL,
   `delivery_address` varchar(100) NOT NULL,
   `delivery_note` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `delivery`
@@ -248,6 +250,7 @@ INSERT INTO `delivery` (`delivery_id`, `account_id`, `delivery_name`, `delivery_
 (2685, 1, 'Lê Thắng', '0123123123131', 'Cần Thơ', 'Đơn hàng mua trực tiếp'),
 (2777, 28, 'Trọng Hiển', '0387581172', 'Cần Thơ', ''),
 (2905, 28, 'das', '123', '123', 'Đơn hàng mua trực tiếp'),
+(3838, 30, 'La Ngọc Nay', '0387581170', 'Cần Thơ', ''),
 (4141, 1, 'La Ngọc Nay', '0123123123123', 'Cần Thơ', 'Đơn hàng mua trực tiếp'),
 (4428, 29, 'Lê Tâm', '0387581173', 'Cần Thơ', ''),
 (4752, 30, 'La Ngọc Nay', '0387581170', 'Cần Thơ', ''),
@@ -257,6 +260,7 @@ INSERT INTO `delivery` (`delivery_id`, `account_id`, `delivery_name`, `delivery_
 (7999, 26, 'La Ngọc Nay', '0387581175', 'Cần Thơ', ''),
 (8403, 30, 'La Ngọc Nay', '0387581170', 'Cần Thơ', ''),
 (8484, 30, 'La Ngọc Nay', '0387581170', 'Cần Thơ', ''),
+(8924, 1, 'La Ngọc Nay', '0123123123123', 'Cần Thơ', 'Đơn hàng mua trực tiếp'),
 (9319, 1, 'Lê Thắng', '0123123123131', 'Cần Thơ', 'Đơn hàng mua trực tiếp'),
 (9541, 29, 'Lê Tâm', '0387581173', 'Cần Thơ', '');
 
@@ -275,7 +279,7 @@ CREATE TABLE `evaluate` (
   `evaluate_content` text NOT NULL,
   `evaluate_date` varchar(50) NOT NULL,
   `evaluate_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `evaluate`
@@ -292,7 +296,8 @@ INSERT INTO `evaluate` (`evaluate_id`, `account_id`, `product_id`, `account_name
 (33, 27, 158, 'Lê Tài', 5, 'ii', '2023-11-05 07:50:49', 1),
 (34, 27, 158, 'Lê Tài', 5, 'iioo', '2023-11-05 07:51:00', 1),
 (35, 27, 155, 'Lê Tài', 5, 'ádasdsa', '2023-11-05 08:25:55', 1),
-(36, 27, 157, 'Lê Tài', 5, 'ádasd', '2023-11-05 08:28:29', 1);
+(36, 27, 157, 'Lê Tài', 5, 'ádasd', '2023-11-05 08:28:29', 1),
+(37, 30, 10, 'La Ngọc Nay', 5, 'Thơm', '2023-11-24 17:13:42', 1);
 
 -- --------------------------------------------------------
 
@@ -311,7 +316,7 @@ CREATE TABLE `inventory` (
   `inventory_date` date NOT NULL,
   `total_amount` float NOT NULL,
   `inventory_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `inventory`
@@ -337,7 +342,7 @@ CREATE TABLE `inventory_detail` (
   `product_id` int(11) NOT NULL,
   `product_quantity` int(11) NOT NULL,
   `product_price_import` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `inventory_detail`
@@ -364,7 +369,7 @@ CREATE TABLE `metrics` (
   `metric_order` int(11) NOT NULL,
   `metric_sales` varchar(100) NOT NULL,
   `metric_quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `metrics`
@@ -381,7 +386,8 @@ INSERT INTO `metrics` (`metric_id`, `metric_date`, `metric_order`, `metric_sales
 (43, '2023-11-04', 2, '10830', 2),
 (44, '2023-11-09', 3, '295982000', 4),
 (45, '2023-11-15', 1, '1960000', 1),
-(46, '2023-11-16', 1, '4950', 1);
+(46, '2023-11-16', 1, '4950', 1),
+(47, '2023-11-27', 1, '285000000', 1);
 
 -- --------------------------------------------------------
 
@@ -400,7 +406,7 @@ CREATE TABLE `momo` (
   `payment_date` varchar(50) NOT NULL,
   `pay_type` varchar(50) NOT NULL,
   `payment_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -417,7 +423,7 @@ CREATE TABLE `orders` (
   `total_amount` int(11) NOT NULL,
   `order_type` int(11) NOT NULL,
   `order_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `orders`
@@ -443,7 +449,9 @@ INSERT INTO `orders` (`order_id`, `order_code`, `order_date`, `account_id`, `del
 (194, 5641, '2023-11-09 17:15:15', 28, 1948, 285000000, 1, 3),
 (195, 9588, '2023-11-09 19:08:37', 31, 2148, 1782000, 1, 1),
 (196, 4445, '2023-11-15 15:35:25', 28, 6335, 1960000, 5, 3),
-(197, 334, '2023-11-16 01:06:16', 28, 2905, 4950, 5, 3);
+(197, 334, '2023-11-16 01:06:16', 28, 2905, 4950, 5, 3),
+(198, 844, '2023-11-24 17:24:31', 30, 3838, 891000, 1, 0),
+(199, 6446, '2023-11-27 23:37:59', 1, 8924, 285000000, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -458,7 +466,7 @@ CREATE TABLE `order_detail` (
   `product_quantity` int(11) NOT NULL,
   `product_price` int(11) NOT NULL,
   `product_sale` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `order_detail`
@@ -488,7 +496,9 @@ INSERT INTO `order_detail` (`order_detail_id`, `order_code`, `product_id`, `prod
 (205, 5641, 22, 1, 300000000, 5),
 (206, 9588, 10, 2, 990000, 10),
 (207, 4445, 154, 1, 2000000, 2),
-(208, 334, 157, 1, 5000, 1);
+(208, 334, 157, 1, 5000, 1),
+(209, 844, 10, 1, 990000, 10),
+(210, 6446, 22, 1, 300000000, 5);
 
 -- --------------------------------------------------------
 
@@ -510,14 +520,14 @@ CREATE TABLE `product` (
   `product_description` text NOT NULL,
   `product_image` text NOT NULL,
   `product_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `product_brand`, `capacity_id`, `product_quantity`, `quantity_sales`, `product_price_import`, `product_price`, `product_sale`, `product_description`, `product_image`, `product_status`) VALUES
-(10, 'Nước Hoa Louis Vuitton Sur La Route 100ml', 1, 3, 12, 7, 7, 9500000, 990000, 10, '<p>Cam kết chỉ b&aacute;n h&agrave;ng ch&iacute;nh h&atilde;ng, chất lượng đảm bảo tuyệt đối. Gi&aacute; cả tốt nhất thị trường, chất lượng sản phẩm tương xứng với số tiền bỏ ra. Giao h&agrave;ng to&agrave;n quốc đồng gi&aacute; 45k, miễn ph&iacute; ship với đơn h&agrave;ng tr&ecirc;n 5 triệu khi đ&atilde; chuyển khoản 100% Tuyệt đối kh&ocirc;ng b&aacute;n h&agrave;ng k&eacute;m chất lượng. Đảm bảo mỗi sản phẩm lu&ocirc;n trong t&igrave;nh trạng nguy&ecirc;n bản. Cam kết mang đến những d&ograve;ng sản phẩm cao cấp mang đến đẳng cấp ph&ugrave; hợp với từng qu&yacute; kh&aacute;ch h&agrave;ng. Cung cấp, giới thiệu đầy đủ th&ocirc;ng tin của sản phẩm tr&ecirc;n website: tungshop.com để qu&yacute; kh&aacute;ch c&oacute; thể t&igrave;m hiểu. Lu&ocirc;n sẵn s&agrave;ng hỗ trợ 24/24 qua Hotline về mọi vấn đề li&ecirc;n quan đến chất lượng sản phẩm, dịch vụ.</p>\r\n', '1683365833_nuoc-hoa-louisvuitton-6.jpg', 1),
+(10, 'Nước Hoa Louis Vuitton Sur La Route 100ml', 1, 3, 12, 6, 8, 9500000, 990000, 10, '<p>Cam kết chỉ b&aacute;n h&agrave;ng ch&iacute;nh h&atilde;ng, chất lượng đảm bảo tuyệt đối. Gi&aacute; cả tốt nhất thị trường, chất lượng sản phẩm tương xứng với số tiền bỏ ra. Giao h&agrave;ng to&agrave;n quốc đồng gi&aacute; 45k, miễn ph&iacute; ship với đơn h&agrave;ng tr&ecirc;n 5 triệu khi đ&atilde; chuyển khoản 100% Tuyệt đối kh&ocirc;ng b&aacute;n h&agrave;ng k&eacute;m chất lượng. Đảm bảo mỗi sản phẩm lu&ocirc;n trong t&igrave;nh trạng nguy&ecirc;n bản. Cam kết mang đến những d&ograve;ng sản phẩm cao cấp mang đến đẳng cấp ph&ugrave; hợp với từng qu&yacute; kh&aacute;ch h&agrave;ng. Cung cấp, giới thiệu đầy đủ th&ocirc;ng tin của sản phẩm tr&ecirc;n website: tungshop.com để qu&yacute; kh&aacute;ch c&oacute; thể t&igrave;m hiểu. Lu&ocirc;n sẵn s&agrave;ng hỗ trợ 24/24 qua Hotline về mọi vấn đề li&ecirc;n quan đến chất lượng sản phẩm, dịch vụ.</p>\r\n', '1683365833_nuoc-hoa-louisvuitton-6.jpg', 1),
 (11, 'Nước Hoa Louis Vuitton Spell On You 100ml ', 1, 3, 12, 15, 0, 9555000, 199000, 10, '<p>Thương hiệu: Louis Vuitton. Xuất xứ: Ph&aacute;p. Dung t&iacute;ch: 100ml. Nồng độ: EDP. Nh&oacute;m hương: Floral-Hương hoa cỏ. Độ lưu hương: 3-6 giờ. Độ tỏa hương: Gần-trong khoảng 1 c&aacute;nh tay. Thời điểm khuy&ecirc;n d&ugrave;ng: Ng&agrave;y, xu&acirc;n, hạ, thu</p>\r\n', '1683365920_nuoc-hoa-louisvuitton-5.jpg', 1),
 (12, 'Nước Hoa Louis Vuitton Coeur Battant 100ml', 2, 3, 12, 9, 6, 9555000, 149000, 10, '<p>Thương hiệu: Louis Vuitton Xuất xứ: Ph&aacute;p Dung t&iacute;ch: 100ml Nồng độ: Eau de parfum (EDP) Nh&oacute;m hương: hương hoa cỏ phương Đ&ocirc;ng &ndash; Oriental Floral Độ lưu hương: L&acirc;u, từ 7 đến 12 giờ Độ tỏa hương: Gần- trong v&ograve;ng 1 c&aacute;nh tay Thời điểm khuy&ecirc;n d&ugrave;ng: Ng&agrave;y, đ&ecirc;m, Xu&acirc;n, Thu</p>\r\n', '1683365994_nuoc-hoa-louisvuitton-4.jpg', 1),
 (13, 'Nước Hoa Louis Vuitton City Of Stars 100ml', 0, 3, 12, 0, 11, 9000000, 100000, 10, '<p>T&ecirc;n sản phẩm Nước Hoa Louis Vuitton City Of Stars 100ml Xuất sứ Ph&aacute;p Nh&oacute;m hương Hương hoa cỏ tr&aacute;i c&acirc;y Phong c&aacute;ch Tươi m&aacute;t trẻ trung hiện đại Hương đầu Qủa cam đỏ , Qu&yacute;t hồng , Chanh v&agrave;ng , Chanh xanh , Cam bergamot Hương giữa Hoa tiare Hương cuối Xạ hương , Hương phấn , Gỗ đ&agrave;n hương Độ lưu hương 7 &ndash; 12 giờ Thời điểm khuy&ecirc;n d&ugrave;ng Ng&agrave;y, đ&ecirc;m , xu&acirc;n , hạ , thu Dung t&iacute;ch 100ml</p>\r\n', '1683366133_nuoc-hoa-louisvuitton-3.jpg', 0),
@@ -529,7 +539,7 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_category`, `produc
 (19, 'Nước Hoa Chanel Chance Eau Tendre EDT 50ml nữ', 1, 1, 7, 2, 6, 3000000, 15000000, 5, '<table border=\"1\" cellspacing=\"0\" style=\"border-collapse:collapse; width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thương hiệu</strong></td>\r\n			<td style=\"width:50%\"><strong>CHANEL</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Xuất xứ</strong></td>\r\n			<td style=\"width:50%\">Ph&aacute;p</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Dung t&iacute;ch</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/105-ml\">Chai 50ml</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nồng độ</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/eau-de-parfum\">Eau de Parfum</a> (EDP)</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nh&oacute;m hương</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/floral-fruity-huong-hoa-co-trai-cay\">Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ lưu hương</strong></td>\r\n			<td style=\"width:50%\">Rất l&acirc;u - Tr&ecirc;n 12 giờ</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ tỏa hương</strong></td>\r\n			<td style=\"width:50%\">Xa - Toả hương trong v&ograve;ng b&aacute;n k&iacute;nh 2 m&eacute;t</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thời điểm th&iacute;ch hợp</strong></td>\r\n			<td style=\"width:50%\">Ng&agrave;y, Đ&ecirc;m, Xu&acirc;n, Hạ, Thu, Đ&ocirc;ng</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>Th&ocirc;ng tin chung</h3>\r\n\r\n<ul>\r\n	<li>Năm ph&aacute;t h&agrave;nh :2015</li>\r\n	<li>Giới t&iacute;nh : Nữ</li>\r\n	<li>Phong c&aacute;ch :Sang trọng, quyến rũ, ngọt ng&agrave;o</li>\r\n	<li>Xuất xứ :Ả Rập</li>\r\n	<li>Promotion :M&atilde; giảm gi&aacute;</li>\r\n</ul>\r\n\r\n<h3>Chi tiết</h3>\r\n\r\n<ul>\r\n	<li>Nồng độ :Eau de Parfum</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Lưu hương :Tr&ecirc;n 12h</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Nh&oacute;m hương :Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Dung t&iacute;ch :100ml</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Độ tỏa hương :Tr&ecirc;n 2m</li>\r\n</ul>\r\n', '1683367818_nuoc-hoa-chanel-2.jpg', 1),
 (20, 'Nước Hoa Dior Sauvage Elixir 60ml', 1, 4, 8, 10, 6, 2500000, 10000000, 8, '<table border=\"1\" cellspacing=\"0\" style=\"border-collapse:collapse; width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thương hiệu</strong></td>\r\n			<td style=\"width:50%\"><strong>DIOR</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Xuất xứ</strong></td>\r\n			<td style=\"width:50%\">Ph&aacute;p</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Dung t&iacute;ch</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/105-ml\">Chai 60ml</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nồng độ</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/eau-de-parfum\">Eau de Parfum</a> (EDP)</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nh&oacute;m hương</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/floral-fruity-huong-hoa-co-trai-cay\">Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ lưu hương</strong></td>\r\n			<td style=\"width:50%\">Rất l&acirc;u - Tr&ecirc;n 12 giờ</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ tỏa hương</strong></td>\r\n			<td style=\"width:50%\">Xa - Toả hương trong v&ograve;ng b&aacute;n k&iacute;nh 2 m&eacute;t</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thời điểm th&iacute;ch hợp</strong></td>\r\n			<td style=\"width:50%\">Ng&agrave;y, Đ&ecirc;m, Xu&acirc;n, Hạ, Thu, Đ&ocirc;ng</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>Th&ocirc;ng tin chung</h3>\r\n\r\n<ul>\r\n	<li>Năm ph&aacute;t h&agrave;nh :2015</li>\r\n	<li>Giới t&iacute;nh : Unisex</li>\r\n	<li>Phong c&aacute;ch :Sang trọng, quyến rũ, ngọt ng&agrave;o</li>\r\n	<li>Xuất xứ :Ả Rập</li>\r\n	<li>Promotion :M&atilde; giảm gi&aacute;</li>\r\n</ul>\r\n\r\n<h3>Chi tiết</h3>\r\n\r\n<ul>\r\n	<li>Nồng độ :Eau de Parfum</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Lưu hương :Tr&ecirc;n 12h</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Nh&oacute;m hương :Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Dung t&iacute;ch :100ml</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Độ tỏa hương :Tr&ecirc;n 2m</li>\r\n</ul>\r\n', '1683367983_nuoc-hoa-dior-1.jpg', 1),
 (21, 'Nước Hoa Dior Miss Dior Le Parfum 100ml nữ', 3, 4, 12, 0, 3, 3000000, 20000000, 8, '<table border=\"1\" cellspacing=\"0\" style=\"border-collapse:collapse; width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thương hiệu</strong></td>\r\n			<td style=\"width:50%\">DIOR</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Xuất xứ</strong></td>\r\n			<td style=\"width:50%\">Ph&aacute;p</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Dung t&iacute;ch</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/105-ml\">Chai 100ml</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nồng độ</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/eau-de-parfum\">Eau de Parfum</a> (EDP)</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nh&oacute;m hương</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/floral-fruity-huong-hoa-co-trai-cay\">Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ lưu hương</strong></td>\r\n			<td style=\"width:50%\">Rất l&acirc;u - Tr&ecirc;n 12 giờ</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ tỏa hương</strong></td>\r\n			<td style=\"width:50%\">Xa - Toả hương trong v&ograve;ng b&aacute;n k&iacute;nh 2 m&eacute;t</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thời điểm th&iacute;ch hợp</strong></td>\r\n			<td style=\"width:50%\">Ng&agrave;y, Đ&ecirc;m, Xu&acirc;n, Hạ, Thu, Đ&ocirc;ng</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>Th&ocirc;ng tin chung</h3>\r\n\r\n<ul>\r\n	<li>Năm ph&aacute;t h&agrave;nh :2015</li>\r\n	<li>Giới t&iacute;nh : Nữ</li>\r\n	<li>Phong c&aacute;ch :Sang trọng, quyến rũ, ngọt ng&agrave;o</li>\r\n	<li>Xuất xứ :Ả Rập</li>\r\n	<li>Promotion :M&atilde; giảm gi&aacute;</li>\r\n</ul>\r\n\r\n<h3>Chi tiết</h3>\r\n\r\n<ul>\r\n	<li>Nồng độ :Eau de Parfum</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Lưu hương :Tr&ecirc;n 12h</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Nh&oacute;m hương :Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Dung t&iacute;ch :100ml</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Độ tỏa hương :Tr&ecirc;n 2m</li>\r\n</ul>\r\n', '1683368078_nuoc-hoa-dior-nu-2.jpg', 1),
-(22, 'Nước hoa Gucci Flora Gorgeous Jasmine EDP 100ml', 2, 2, 12, 13, 12, 30000000, 300000000, 5, '<table border=\"1\" cellspacing=\"0\" style=\"border-collapse:collapse; width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thương hiệu</strong></td>\r\n			<td style=\"width:50%\"><strong>GUCCI</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Xuất xứ</strong></td>\r\n			<td style=\"width:50%\">Ph&aacute;p</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Dung t&iacute;ch</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/105-ml\">Chai 100ml</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nồng độ</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/eau-de-parfum\">Eau de Parfum</a> (EDP)</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nh&oacute;m hương</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/floral-fruity-huong-hoa-co-trai-cay\">Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ lưu hương</strong></td>\r\n			<td style=\"width:50%\">Rất l&acirc;u - Tr&ecirc;n 12 giờ</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ tỏa hương</strong></td>\r\n			<td style=\"width:50%\">Xa - Toả hương trong v&ograve;ng b&aacute;n k&iacute;nh 2 m&eacute;t</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thời điểm th&iacute;ch hợp</strong></td>\r\n			<td style=\"width:50%\">Ng&agrave;y, Đ&ecirc;m, Xu&acirc;n, Hạ, Thu, Đ&ocirc;ng</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>Th&ocirc;ng tin chung</h3>\r\n\r\n<ul>\r\n	<li>Năm ph&aacute;t h&agrave;nh :2015</li>\r\n	<li>Giới t&iacute;nh : Unisex</li>\r\n	<li>Phong c&aacute;ch :Sang trọng, quyến rũ, ngọt ng&agrave;o</li>\r\n	<li>Xuất xứ :Ả Rập</li>\r\n	<li>Promotion :M&atilde; giảm gi&aacute;</li>\r\n</ul>\r\n\r\n<h3>Chi tiết</h3>\r\n\r\n<ul>\r\n	<li>Nồng độ :Eau de Parfum</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Lưu hương :Tr&ecirc;n 12h</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Nh&oacute;m hương :Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Dung t&iacute;ch :100ml</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Độ tỏa hương :Tr&ecirc;n 2m</li>\r\n</ul>\r\n', '1683368197_nuoc-hoa-gucci-3.jpg', 1),
+(22, 'Nước hoa Gucci Flora Gorgeous Jasmine EDP 100ml', 2, 2, 12, 12, 13, 30000000, 300000000, 5, '<table border=\"1\" cellspacing=\"0\" style=\"border-collapse:collapse; width:100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thương hiệu</strong></td>\r\n			<td style=\"width:50%\"><strong>GUCCI</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Xuất xứ</strong></td>\r\n			<td style=\"width:50%\">Ph&aacute;p</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Dung t&iacute;ch</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/105-ml\">Chai 100ml</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nồng độ</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/eau-de-parfum\">Eau de Parfum</a> (EDP)</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Nh&oacute;m hương</strong></td>\r\n			<td style=\"width:50%\"><a href=\"https://vuahanghieu.com/nuoc-hoa/floral-fruity-huong-hoa-co-trai-cay\">Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</a></td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ lưu hương</strong></td>\r\n			<td style=\"width:50%\">Rất l&acirc;u - Tr&ecirc;n 12 giờ</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Độ tỏa hương</strong></td>\r\n			<td style=\"width:50%\">Xa - Toả hương trong v&ograve;ng b&aacute;n k&iacute;nh 2 m&eacute;t</td>\r\n		</tr>\r\n		<tr>\r\n			<td style=\"width:50%\"><strong>Thời điểm th&iacute;ch hợp</strong></td>\r\n			<td style=\"width:50%\">Ng&agrave;y, Đ&ecirc;m, Xu&acirc;n, Hạ, Thu, Đ&ocirc;ng</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h3>Th&ocirc;ng tin chung</h3>\r\n\r\n<ul>\r\n	<li>Năm ph&aacute;t h&agrave;nh :2015</li>\r\n	<li>Giới t&iacute;nh : Unisex</li>\r\n	<li>Phong c&aacute;ch :Sang trọng, quyến rũ, ngọt ng&agrave;o</li>\r\n	<li>Xuất xứ :Ả Rập</li>\r\n	<li>Promotion :M&atilde; giảm gi&aacute;</li>\r\n</ul>\r\n\r\n<h3>Chi tiết</h3>\r\n\r\n<ul>\r\n	<li>Nồng độ :Eau de Parfum</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Lưu hương :Tr&ecirc;n 12h</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Nh&oacute;m hương :Floral Fruity - hương hoa cỏ tr&aacute;i c&acirc;y</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Dung t&iacute;ch :100ml</li>\r\n</ul>\r\n\r\n<ul>\r\n	<li>Độ tỏa hương :Tr&ecirc;n 2m</li>\r\n</ul>\r\n', '1683368197_nuoc-hoa-gucci-3.jpg', 1),
 (152, 'Nước hoa Gucci', 2, 4, 5, 13, 2, 1500000, 17500000, 2, '<p>Hết h&igrave;nh gắn đại</p>\r\n', '1698471447_1683366558_nuoc-hoa-gucci-2.jpg', 1),
 (153, 'Nước hoa Chanel', 3, 3, 7, 0, 0, 25000000, 50000000, 10, '<p>Nhức nho nhờ nheo</p>\r\n', '1698325666_download.jpg', 1),
 (154, 'Nước hoa chiết', 4, 7, 3, 102, 18, 1500000, 2000000, 2, '<p>sdsad</p>\r\n', '1698489040_images (1).jpg', 1),
@@ -555,7 +565,7 @@ CREATE TABLE `vnpay` (
   `vnp_transactionno` varchar(50) NOT NULL,
   `order_code` int(11) NOT NULL,
   `payment_status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -678,7 +688,7 @@ ALTER TABLE `vnpay`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `article`
@@ -720,13 +730,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `evaluate`
 --
 ALTER TABLE `evaluate`
-  MODIFY `evaluate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `evaluate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `inventory`
@@ -744,7 +754,7 @@ ALTER TABLE `inventory_detail`
 -- AUTO_INCREMENT cho bảng `metrics`
 --
 ALTER TABLE `metrics`
-  MODIFY `metric_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `metric_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT cho bảng `momo`
@@ -756,13 +766,13 @@ ALTER TABLE `momo`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=198;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
 
 --
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 
 --
 -- AUTO_INCREMENT cho bảng `product`

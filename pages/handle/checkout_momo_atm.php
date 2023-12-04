@@ -14,8 +14,8 @@ $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
     $orderInfo = "Thanh toán qua MoMo ATM";
     $amount = $_SESSION['total_amount'];
     $orderId = $_SESSION['order_code'];
-    $redirectUrl = "http://localhost:8080/guhastorephp/index.php?page=thankiu";
-    $ipnUrl = "http://localhost:8080/guhastorephp/index.php?page=thankiu";
+    $redirectUrl = "http://localhost:8080/ruokstorephp/index.php?page=thankiu";
+    $ipnUrl = "http://localhost:8080/ruokstorephp/index.php?page=thankiu";
     $extraData = "";
 
 
